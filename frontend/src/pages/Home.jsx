@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { Code, PenTool, TrendingUp, Globe, ShieldCheck, Zap, Star } from 'lucide-react';
+import { Code, PenTool, TrendingUp, Globe, ShieldCheck, Zap, Star, Users } from 'lucide-react';
 
 const Home = () => {
   return (
