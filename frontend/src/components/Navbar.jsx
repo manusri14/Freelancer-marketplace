@@ -1,7 +1,7 @@
 import { useContext } from 'react';
 import { Link } from 'react-router-dom';
 import { AuthContext } from '../context/AuthContext';
-import { LogOut, User, Menu } from 'lucide-react';
+import { LogOut, User } from 'lucide-react';
 
 const Navbar = () => {
   const { user, logout } = useContext(AuthContext);
@@ -57,9 +57,7 @@ const Navbar = () => {
           </div>
           
           <div className="md:hidden flex items-center">
-            <button className="text-gray-700 focus:outline-none dark:text-gray-200">
-              <Menu size={24} />
-            </button>
+            {/* The hamburger menu has been replaced by the BottomNav on mobile devices */}
           </div>
         </div>
       </div>

@@ -1,5 +1,6 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import Navbar from './components/Navbar';
+import BottomNav from './components/BottomNav';
 import Home from './pages/Home';
 import Login from './pages/Login';
 import Register from './pages/Register';
@@ -23,7 +24,7 @@ function App() {
       <Router>
         <div className="flex flex-col min-h-screen">
           <Navbar />
-          <main className="flex-grow">
+          <main className="flex-grow pb-16 md:pb-0">
             <Routes>
               <Route path="/" element={<Home />} />
               <Route path="/login" element={<Login />} />
@@ -45,6 +46,7 @@ function App() {
           <footer className="bg-slate-900 py-6 text-center text-slate-400">
             <p>&copy; {new Date().getFullYear()} Freelancer Marketplace. All rights reserved.</p>
           </footer>
+          <BottomNav />
         </div>
       </Router>
     </AuthProvider>
