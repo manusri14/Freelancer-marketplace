@@ -74,7 +74,7 @@ const Settings = () => {
     }
   };
 
-  if (!user) return <div className="text-center py-20">Please log in to view settings.</div>;
+  if (!user) return <div className="text-center py-10 md:py-20">Please log in to view settings.</div>;
 
   return (
     <div className="container mx-auto px-6 py-8 max-w-3xl">

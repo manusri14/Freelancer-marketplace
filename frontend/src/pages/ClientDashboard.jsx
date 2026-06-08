@@ -29,7 +29,7 @@ const ClientDashboard = () => {
   const activeProjects = projects.filter(p => p.status === 'open' || p.status === 'in-progress');
   const completedProjects = projects.filter(p => p.status === 'completed');
 
-  if (loading) return <div className="text-center py-20">Loading dashboard...</div>;
+  if (loading) return <div className="text-center py-10 md:py-20">Loading dashboard...</div>;
 
   return (
     <div className="container mx-auto px-6 py-8">

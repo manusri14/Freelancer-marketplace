@@ -5,7 +5,7 @@ const Home = () => {
   return (
     <div className="bg-slate-50 dark:bg-slate-900 min-h-screen font-sans selection:bg-indigo-500 selection:text-white">
       {/* Hero Section */}
-      <section className="relative overflow-hidden bg-slate-900 pt-24 pb-32">
+      <section className="relative overflow-hidden bg-slate-900 pt-12 md:pt-24 pb-16 md:pb-32">
         {/* Background Ambient Glows */}
         <div className="absolute top-0 left-1/2 w-full -translate-x-1/2 h-full overflow-hidden z-0 pointer-events-none">
           <div className="absolute top-[-10%] left-[-10%] w-96 h-96 bg-indigo-600 rounded-full mix-blend-multiply filter blur-[128px] opacity-40 animate-pulse"></div>
@@ -25,7 +25,7 @@ const Home = () => {
             </span>
           </h1>
           
-          <p className="text-xl md:text-2xl mb-12 max-w-3xl mx-auto text-slate-300 font-light leading-relaxed">
+          <p className="text-xl md:text-2xl mb-6 md:mb-12 max-w-3xl mx-auto text-slate-300 font-light leading-relaxed">
             Connect with vetted professionals from around the globe. Enjoy secure payments, extraordinary quality, and faster delivery.
           </p>
           
@@ -64,9 +64,9 @@ const Home = () => {
       </section>
 
       {/* Popular Categories */}
-      <section className="py-24">
+      <section className="py-12 md:py-24">
         <div className="container mx-auto px-6">
-          <div className="text-center mb-16">
+          <div className="text-center mb-8 md:mb-16">
             <h2 className="text-4xl font-bold text-slate-800 dark:text-white tracking-tight mb-4">Explore Popular Categories</h2>
             <p className="text-lg text-slate-500 dark:text-slate-400 max-w-2xl mx-auto">Find experts in the most in-demand fields right now.</p>
           </div>
@@ -100,14 +100,14 @@ const Home = () => {
       </section>
 
       {/* How it Works */}
-      <section className="py-24 bg-indigo-50 dark:bg-slate-800/50">
+      <section className="py-12 md:py-24 bg-indigo-50 dark:bg-slate-800/50">
         <div className="container mx-auto px-6">
-          <div className="text-center mb-20">
+          <div className="text-center mb-10 md:mb-20">
             <h2 className="text-4xl font-bold text-slate-800 dark:text-white tracking-tight mb-4">How FreelanceHub Works</h2>
             <p className="text-lg text-slate-500 dark:text-slate-400 max-w-2xl mx-auto">Getting things done has never been easier or more secure.</p>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-12 relative">
+          <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-12 relative">
             {/* Connecting line for desktop */}
             <div className="hidden md:block absolute top-1/2 left-[15%] w-[70%] h-0.5 bg-gradient-to-r from-indigo-200 via-purple-200 to-indigo-200 dark:from-slate-700 dark:via-indigo-900 dark:to-slate-700 -z-10"></div>
 
@@ -139,7 +139,7 @@ const Home = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="py-24 relative overflow-hidden">
+      <section className="py-12 md:py-24 relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-indigo-900 to-slate-900 z-0"></div>
         <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-full max-w-4xl h-[400px] bg-indigo-600 rounded-full mix-blend-overlay filter blur-[100px] opacity-50 z-0 pointer-events-none"></div>
         

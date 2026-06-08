@@ -89,7 +89,7 @@ const Chat = () => {
     }
   };
 
-  if (loading) return <div className="text-center py-20">Loading chat...</div>;
+  if (loading) return <div className="text-center py-10 md:py-20">Loading chat...</div>;
 
   return (
     <div className="container mx-auto px-6 py-8 max-w-4xl h-[calc(100vh-100px)] flex flex-col">

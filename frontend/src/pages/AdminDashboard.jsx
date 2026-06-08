@@ -44,7 +44,7 @@ const AdminDashboard = () => {
     }
   };
 
-  if (loading) return <div className="text-center py-20">Loading admin dashboard...</div>;
+  if (loading) return <div className="text-center py-10 md:py-20">Loading admin dashboard...</div>;
 
   return (
     <div className="container mx-auto px-6 py-8">

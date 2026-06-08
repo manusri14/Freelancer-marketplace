@@ -50,7 +50,7 @@ const Freelancers = () => {
       </div>
 
       {loading ? (
-        <div className="text-center py-20">Loading freelancers...</div>
+        <div className="text-center py-10 md:py-20">Loading freelancers...</div>
       ) : freelancers.length === 0 ? (
         <div className="bg-white dark:bg-slate-800 p-10 rounded-xl text-center border border-slate-100 dark:border-slate-700">
           <p className="text-slate-500 dark:text-slate-400">No freelancers found.</p>

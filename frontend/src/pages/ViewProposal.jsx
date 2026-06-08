@@ -38,9 +38,9 @@ const ViewProposal = () => {
     }
   }, [id, user]);
 
-  if (!user || user.role !== 'freelancer') return <div className="text-center py-20">Access Denied.</div>;
-  if (loading) return <div className="text-center py-20">Loading proposal...</div>;
-  if (error || !proposal) return <div className="text-center py-20 text-red-500">{error}</div>;
+  if (!user || user.role !== 'freelancer') return <div className="text-center py-10 md:py-20">Access Denied.</div>;
+  if (loading) return <div className="text-center py-10 md:py-20">Loading proposal...</div>;
+  if (error || !proposal) return <div className="text-center py-10 md:py-20 text-red-500">{error}</div>;
 
   return (
     <div className="container mx-auto px-6 py-8 max-w-4xl">

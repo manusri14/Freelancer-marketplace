@@ -23,8 +23,8 @@ const FreelancerProfile = () => {
     fetchProfile();
   }, [id]);
 
-  if (loading) return <div className="text-center py-20">Loading profile...</div>;
-  if (error || !profile) return <div className="text-center py-20 text-red-500">{error}</div>;
+  if (loading) return <div className="text-center py-10 md:py-20">Loading profile...</div>;
+  if (error || !profile) return <div className="text-center py-10 md:py-20 text-red-500">{error}</div>;
 
   return (
     <div className="container mx-auto px-6 py-8 max-w-4xl">

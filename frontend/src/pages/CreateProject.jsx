@@ -78,7 +78,7 @@ const CreateProject = () => {
   };
 
   if (!user || user.role !== 'client') {
-    return <div className="text-center py-20">Access Denied. Only clients can post projects.</div>;
+    return <div className="text-center py-10 md:py-20">Access Denied. Only clients can post projects.</div>;
   }
 
   return (

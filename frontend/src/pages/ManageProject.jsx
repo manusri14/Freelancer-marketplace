@@ -104,9 +104,9 @@ const ManageProject = () => {
     }
   };
 
-  if (!user || user.role !== 'client') return <div className="text-center py-20">Access Denied. Only clients can manage projects.</div>;
-  if (loading) return <div className="text-center py-20">Loading project management...</div>;
-  if (error || !project) return <div className="text-center py-20 text-red-500">{error}</div>;
+  if (!user || user.role !== 'client') return <div className="text-center py-10 md:py-20">Access Denied. Only clients can manage projects.</div>;
+  if (loading) return <div className="text-center py-10 md:py-20">Loading project management...</div>;
+  if (error || !project) return <div className="text-center py-10 md:py-20 text-red-500">{error}</div>;
 
   return (
     <div className="container mx-auto px-6 py-8">
