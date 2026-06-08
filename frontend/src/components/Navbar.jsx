@@ -57,7 +57,15 @@ const Navbar = () => {
           </div>
           
           <div className="md:hidden flex items-center">
-            {/* The hamburger menu has been replaced by the BottomNav on mobile devices */}
+            {user && (
+              <button 
+                onClick={logout} 
+                className="text-red-500 hover:text-red-700 transition p-2 bg-red-50 dark:bg-red-900/20 rounded-full flex items-center justify-center"
+                title="Logout"
+              >
+                <LogOut size={20} />
+              </button>
+            )}
           </div>
         </div>
       </div>
