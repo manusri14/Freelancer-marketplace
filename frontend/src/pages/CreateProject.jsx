@@ -36,7 +36,7 @@ const CreateProject = () => {
     
     try {
       const token = localStorage.getItem('token');
-      const { data } = await axios.post('http://localhost:5000/api/ai/generate-description', {
+      const { data } = await axios.post(`/api/ai/generate-description`, {
         title: formData.title,
         category: formData.category,
         keywords: formData.requiredSkills
@@ -65,7 +65,7 @@ const CreateProject = () => {
         requiredSkills: formData.requiredSkills.split(',').map(s => s.trim())
       };
 
-      await axios.post('http://localhost:5000/api/projects', payload, {
+      await axios.post(`/api/projects`, payload, {
         headers: { Authorization: `Bearer ${token}` }
       });
 

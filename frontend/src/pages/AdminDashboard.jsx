@@ -16,8 +16,8 @@ const AdminDashboard = () => {
         const config = { headers: { Authorization: `Bearer ${token}` } };
         
         const [analyticsRes, usersRes] = await Promise.all([
-          axios.get('http://localhost:5000/api/admin/analytics', config),
-          axios.get('http://localhost:5000/api/admin/users', config)
+          axios.get(`/api/admin/analytics`, config),
+          axios.get(`/api/admin/users`, config)
         ]);
 
         setAnalytics(analyticsRes.data.data);
@@ -36,7 +36,7 @@ const AdminDashboard = () => {
       try {
         const token = localStorage.getItem('token');
         const config = { headers: { Authorization: `Bearer ${token}` } };
-        await axios.delete(`http://localhost:5000/api/admin/users/${userId}`, config);
+        await axios.delete(`/api/admin/users/${userId}`, config);
         setUsers(users.filter(u => u._id !== userId));
       } catch (error) {
         console.error('Error deleting user', error);

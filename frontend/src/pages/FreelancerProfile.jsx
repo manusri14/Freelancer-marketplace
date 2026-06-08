@@ -12,7 +12,7 @@ const FreelancerProfile = () => {
   useEffect(() => {
     const fetchProfile = async () => {
       try {
-        const { data } = await axios.get(`http://localhost:5000/api/users/${id}`);
+        const { data } = await axios.get(`/api/users/${id}`);
         setProfile(data.data);
       } catch (err) {
         setError('Failed to load profile.');

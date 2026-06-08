@@ -27,7 +27,7 @@ const Chat = () => {
     if (!user) return;
 
     // Connect to Socket
-    socketRef.current = io('http://localhost:5000');
+    socketRef.current = io(import.meta.env.VITE_API_URL);
     
     socketRef.current.emit('setup', user);
     socketRef.current.emit('join chat', userId); // We use the other user's ID or a unique room ID. For simplicity we join a room based on the two users.
@@ -40,7 +40,7 @@ const Chat = () => {
         const config = { headers: { Authorization: `Bearer ${token}` } };
         
         // Fetch Messages
-        const { data } = await axios.get(`http://localhost:5000/api/chat/${userId}`, config);
+        const { data } = await axios.get(`/api/chat/${userId}`, config);
         setMessages(data.data);
         
         // Let's try to get the other user's details. We'll use a generic approach or derive from messages.
@@ -78,7 +78,7 @@ const Chat = () => {
       const token = localStorage.getItem('token');
       const config = { headers: { Authorization: `Bearer ${token}` } };
       
-      const { data } = await axios.post(`http://localhost:5000/api/chat/${userId}`, { message: newMessage }, config);
+      const { data } = await axios.post(`/api/chat/${userId}`, { message: newMessage }, config);
       
       setMessages([...messages, data.data]);
       setNewMessage('');

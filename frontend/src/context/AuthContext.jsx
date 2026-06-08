@@ -18,7 +18,7 @@ export const AuthProvider = ({ children }) => {
             },
           };
           // Try to fetch user data
-          const { data } = await axios.get('http://localhost:5000/api/auth/me', config);
+          const { data } = await axios.get(`/api/auth/me`, config);
           if (data.success) {
             setUser(data.data);
           }
@@ -34,7 +34,7 @@ export const AuthProvider = ({ children }) => {
   }, []);
 
   const login = async (email, password) => {
-    const { data } = await axios.post('http://localhost:5000/api/auth/login', {
+    const { data } = await axios.post(`/api/auth/login`, {
       email,
       password,
     });
@@ -46,7 +46,7 @@ export const AuthProvider = ({ children }) => {
   };
 
   const register = async (name, email, password, role) => {
-    const { data } = await axios.post('http://localhost:5000/api/auth/register', {
+    const { data } = await axios.post(`/api/auth/register`, {
       name,
       email,
       password,
