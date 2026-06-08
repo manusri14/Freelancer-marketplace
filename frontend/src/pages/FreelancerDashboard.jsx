@@ -14,7 +14,7 @@ const FreelancerDashboard = () => {
       try {
         const token = localStorage.getItem('token');
         const config = { headers: { Authorization: `Bearer ${token}` } };
-        const { data } = await axios.get(`/api/proposals`, config);
+        const { data } = await axios.get(`${import.meta.env.VITE_API_URL}/api/proposals`, config);
         setProposals(data.data);
       } catch (error) {
         console.error('Error fetching proposals', error);

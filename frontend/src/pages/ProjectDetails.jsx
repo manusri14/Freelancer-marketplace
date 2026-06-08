@@ -22,7 +22,7 @@ const ProjectDetails = () => {
   useEffect(() => {
     const fetchProject = async () => {
       try {
-        const { data } = await axios.get(`/api/projects/${id}`);
+        const { data } = await axios.get(`${import.meta.env.VITE_API_URL}/api/projects/${id}`);
         setProject(data.data);
       } catch (err) {
         setError('Project not found or failed to load.');
@@ -45,7 +45,7 @@ const ProjectDetails = () => {
 
     try {
       const token = localStorage.getItem('token');
-      await axios.post(`/api/projects/${id}/proposals`, {
+      await axios.post(`${import.meta.env.VITE_API_URL}/api/projects/${id}/proposals`, {
         bidAmount,
         deliveryTime,
         coverLetter

@@ -15,7 +15,7 @@ const ClientDashboard = () => {
       try {
         const token = localStorage.getItem('token');
         const config = { headers: { Authorization: `Bearer ${token}` } };
-        const { data } = await axios.get(`/api/projects?client=${user._id}`, config);
+        const { data } = await axios.get(`${import.meta.env.VITE_API_URL}/api/projects?client=${user._id}`, config);
         setProjects(data.data);
       } catch (error) {
         console.error('Error fetching projects', error);

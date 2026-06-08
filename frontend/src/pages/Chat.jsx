@@ -40,7 +40,7 @@ const Chat = () => {
         const config = { headers: { Authorization: `Bearer ${token}` } };
         
         // Fetch Messages
-        const { data } = await axios.get(`/api/chat/${userId}`, config);
+        const { data } = await axios.get(`${import.meta.env.VITE_API_URL}/api/chat/${userId}`, config);
         setMessages(data.data);
         
         // Let's try to get the other user's details. We'll use a generic approach or derive from messages.
@@ -78,7 +78,7 @@ const Chat = () => {
       const token = localStorage.getItem('token');
       const config = { headers: { Authorization: `Bearer ${token}` } };
       
-      const { data } = await axios.post(`/api/chat/${userId}`, { message: newMessage }, config);
+      const { data } = await axios.post(`${import.meta.env.VITE_API_URL}/api/chat/${userId}`, { message: newMessage }, config);
       
       setMessages([...messages, data.data]);
       setNewMessage('');

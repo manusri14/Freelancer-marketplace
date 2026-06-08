@@ -19,7 +19,7 @@ const Projects = () => {
     const fetchProjects = async () => {
       setLoading(true);
       try {
-        let url = `/api/projects?status=open`;
+        let url = `${import.meta.env.VITE_API_URL}/api/projects?status=open`;
         if (keyword) url += `&title[regex]=${keyword}&title[options]=i`;
         if (category) url += `&category=${encodeURIComponent(category)}`;
         

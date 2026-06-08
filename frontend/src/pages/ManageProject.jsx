@@ -24,11 +24,11 @@ const ManageProject = () => {
         const config = { headers: { Authorization: `Bearer ${token}` } };
         
         // Fetch project details
-        const projectRes = await axios.get(`/api/projects/${id}`, config);
+        const projectRes = await axios.get(`${import.meta.env.VITE_API_URL}/api/projects/${id}`, config);
         setProject(projectRes.data.data);
 
         // Fetch proposals for this project
-        const proposalsRes = await axios.get(`/api/projects/${id}/proposals`, config);
+        const proposalsRes = await axios.get(`${import.meta.env.VITE_API_URL}/api/projects/${id}/proposals`, config);
         setProposals(proposalsRes.data.data);
 
       } catch (err) {
@@ -48,14 +48,14 @@ const ManageProject = () => {
       const config = { headers: { Authorization: `Bearer ${token}` } };
       
       // Update proposal status
-      await axios.put(`/api/proposals/${proposalId}/status`, { status }, config);
+      await axios.put(`${import.meta.env.VITE_API_URL}/api/proposals/${proposalId}/status`, { status }, config);
       
       // Update local state
       setProposals(proposals.map(p => p._id === proposalId ? { ...p, status } : p));
       
       // If accepted, update project status locally AND in DB
       if (status === 'accepted') {
-        await axios.put(`/api/projects/${id}`, { status: 'in-progress' }, config);
+        await axios.put(`${import.meta.env.VITE_API_URL}/api/projects/${id}`, { status: 'in-progress' }, config);
         setProject({ ...project, status: 'in-progress' });
       }
 
@@ -70,7 +70,7 @@ const ManageProject = () => {
       const token = localStorage.getItem('token');
       const config = { headers: { Authorization: `Bearer ${token}` } };
       
-      await axios.put(`/api/projects/${id}`, { status: 'completed' }, config);
+      await axios.put(`${import.meta.env.VITE_API_URL}/api/projects/${id}`, { status: 'completed' }, config);
       setProject({ ...project, status: 'completed' });
     } catch (err) {
       console.error('Failed to complete project', err);
@@ -95,7 +95,7 @@ const ManageProject = () => {
         review: reviewText
       };
 
-      await axios.post(`/api/reviews`, reviewData, config);
+      await axios.post(`${import.meta.env.VITE_API_URL}/api/reviews`, reviewData, config);
       setReviewSubmitted(true);
       alert('Review submitted successfully!');
     } catch (err) {

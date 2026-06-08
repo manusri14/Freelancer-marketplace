@@ -14,7 +14,7 @@ const Freelancers = () => {
       try {
         const token = localStorage.getItem('token');
         const config = { headers: { Authorization: `Bearer ${token}` } };
-        const { data } = await axios.get(`/api/users/freelancers${keyword ? `?keyword=${keyword}` : ''}`, config);
+        const { data } = await axios.get(`${import.meta.env.VITE_API_URL}/api/users/freelancers${keyword ? `?keyword=${keyword}` : ''}`, config);
         setFreelancers(data.data);
       } catch (error) {
         console.error('Error fetching freelancers', error);

@@ -19,7 +19,7 @@ const ViewProposal = () => {
         
         // We only have a get all proposals route, so we filter it here
         // (A dedicated get single proposal backend route is ideal, but this works)
-        const { data } = await axios.get(`/api/proposals`, config);
+        const { data } = await axios.get(`${import.meta.env.VITE_API_URL}/api/proposals`, config);
         const myProposal = data.data.find(p => p._id === id);
         
         if (myProposal) {

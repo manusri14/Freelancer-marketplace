@@ -45,7 +45,7 @@ const Settings = () => {
         const formData = new FormData();
         formData.append('avatar', selectedFile);
         
-        const avatarRes = await axios.post(`/api/users/avatar`, formData, {
+        const avatarRes = await axios.post(`${import.meta.env.VITE_API_URL}/api/users/avatar`, formData, {
           headers: { ...config.headers, 'Content-Type': 'multipart/form-data' }
         });
         updatedUser = avatarRes.data.data;
@@ -58,7 +58,7 @@ const Settings = () => {
         skills: skills.split(',').map(s => s.trim()).filter(s => s !== '')
       };
 
-      const profileRes = await axios.put(`/api/users/profile`, profileData, config);
+      const profileRes = await axios.put(`${import.meta.env.VITE_API_URL}/api/users/profile`, profileData, config);
       updatedUser = profileRes.data.data;
 
       // 3. Update Auth Context
